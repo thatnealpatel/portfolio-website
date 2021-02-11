@@ -2,6 +2,9 @@ import * as React from 'react';
 import { useState } from 'react';
 import './App.css';
 
+
+import Resume from 'src/media/resume.pdf'; 
+
 /**
 App
   Single Page Application.
@@ -17,7 +20,6 @@ function App() {
 
   const linkedin = "https://linkedin.com/in/thatnealpatel";
   const github = "https://github.com/nealdotpy";
-  const resume = "https://nealdotpy.dev/static/media/resume.ce359c80.pdf";
 
   return (
     <div className="App">
@@ -25,7 +27,7 @@ function App() {
         <NavItem link="#" index={0} isActive={activeIndex === 0} onClick={navClick} name="/neal.html" />
         <NavItem link="#" index={1} isActive={activeIndex === 1} onClick={navClick} name="/doc/" />
         <NavItem link="#" index={2} isActive={activeIndex === 2} onClick={navClick} name="/src/" />
-        <NavItem link={resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.pdf" />
+        <NavItem link={Resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.pdf" />
         <NavItem link={linkedin} index={4} isActive={activeIndex === 4} onClick={navClick} name="/ext/linkedin.txt" /> 
         <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.txt" />     
       </nav>
