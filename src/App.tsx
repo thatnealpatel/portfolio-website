@@ -2,7 +2,10 @@ import * as React from 'react';
 import { useState } from 'react';
 import './App.css';
 
-
+/**
+App
+  Single Page Application.
+*/
 function App() {
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -13,7 +16,8 @@ function App() {
   };
 
   const linkedin = "https://linkedin.com/in/thatnealpatel";
-  const github = "https://github.com/nealdotpy"
+  const github = "https://github.com/nealdotpy";
+  const resume = "https://nealdotpy.dev/static/media/resume.ce359c80.pdf";
 
   return (
     <div className="App">
@@ -21,7 +25,7 @@ function App() {
         <NavItem link="#" index={0} isActive={activeIndex === 0} onClick={navClick} name="/neal.html" />
         <NavItem link="#" index={1} isActive={activeIndex === 1} onClick={navClick} name="/doc/" />
         <NavItem link="#" index={2} isActive={activeIndex === 2} onClick={navClick} name="/src/" />
-        <NavItem link="#" index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.pdf" />
+        <NavItem link={resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.pdf" />
         <NavItem link={linkedin} index={4} isActive={activeIndex === 4} onClick={navClick} name="/ext/linkedin.txt" /> 
         <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.txt" />     
       </nav>
@@ -30,6 +34,14 @@ function App() {
 }
 
 
+/*
+NavItem
+  Abstraction for nav elements.
+  Takes NavItemProps in order to faciliate dynamic class assignment.
+  Additionally, there exists one hard-coded component: 
+    this.props.index >= 3 :: indicates that NavItem's with index gte 3 
+    are externally linked elements, while all else renders on page.
+*/
 interface NavItemProps {
   link: string;
   index: number;
@@ -46,7 +58,7 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
 
   render() {
     return <li className="nav-item">
-      { this.props.index >= 4 ?
+      { this.props.index >= 3 ?
         <a 
           href={this.props.link}
           className={this.props.isActive ? 'nav-item__selected' : ''} 
@@ -63,21 +75,3 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
 }
 
 export default App;
-
-/*
-<li className={`nav-item ${activeIndex === 1 ? 'nav-item__selected' : ''}`}>
-          <a>{"/doc/"}</a>
-        </li>
-        <li className="nav-item">
-          <a>{"/src/"}</a>
-        </li>
-        <li className="nav-item">
-          <a>{"/ext/resume.pdf"}</a>
-        </li>
-        <li className="nav-item">
-          <a href="https://linkedin.com/in/thatnealpatel">{"/ext/linkedin.txt"}</a>
-        </li>
-        <li className="nav-item">
-          <a href="https://github.com/nealdotpy">{"/ext/github.txt"}</a>
-        </li>
-*/
