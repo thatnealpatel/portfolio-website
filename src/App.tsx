@@ -4,13 +4,20 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p className="coming-soon-text">
-          nealpatel:portfolio. 
-          <br></br>
-          coming soon...
-        </p>
-      </header>
+      <nav className="min-nav">
+        <li className="nav-item">
+          {"<home/>"}
+        </li>
+        <li className="nav-item">
+          {"<media/>"}
+        </li>
+        <li className="nav-item">
+          {"<projects/>"}
+        </li>
+        <li className="nav-item">
+          {"<resume/>"}
+        </li>
+      </nav>
     </div>
   );
 }
