@@ -9,6 +9,7 @@ function App() {
 
   const navClick = (index: number) => {
     setActiveIndex(index);
+    console.log("clicked:", activeIndex);
   };
 
   const linkedin = "https://linkedin.com/in/thatnealpatel";
@@ -45,11 +46,18 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
 
   render() {
     return <li className="nav-item">
-      <a 
-        href={this.props.link}
-        className={this.props.isActive ? 'nav-item__selected' : ''} 
-        onClick={this.handleClick}>{this.props.name}
-      </a>
+      { this.props.index >= 4 ?
+        <a 
+          href={this.props.link}
+          className={this.props.isActive ? 'nav-item__selected' : ''} 
+          onClick={this.handleClick}>{this.props.name}
+        </a>
+        :
+        <a
+          className={this.props.isActive ? 'nav-item__selected' : ''} 
+          onClick={this.handleClick}>{this.props.name}
+        </a>
+      }
     </li>
   }
 }
