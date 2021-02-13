@@ -198,7 +198,7 @@ function Doc() {
   ];
 
   return( 
-    <div>
+    <div className="faux-terminal">
       <Typist avgTypingDelay={25} cursor={{show: false}}>
         <p className="fp-header">{"> ls /doc/ | render --use-card Doc"}</p>
       </Typist>
@@ -261,7 +261,7 @@ function Src() {
   ];
 
   return( 
-    <div>
+    <div className="faux-terminal">
       <Typist avgTypingDelay={25} cursor={{show: false}}>
         <p className="fp-header">{"> ls /doc/ | render --use-card Src"}</p>
       </Typist>

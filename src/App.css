@@ -79,10 +79,16 @@ nav {
   bottom: 0;
 }
 
+.faux-terminal {
+  overflow: hidden; 
+}
+
 .media {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .media-card {
@@ -114,4 +120,10 @@ nav {
 
 .hidden {
   display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .media {
+    max-height: 65vh;
+  }
 }
