@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Typist from 'react-typist';
 import { useState } from 'react';
 import './App.css';
 
@@ -128,22 +129,28 @@ Splash
 */
 class Splash extends React.Component {
 
+  // <p className="fp-header">{"> render /neal.html --ascii-only"}</p>
   render() {
     return <div>
-      <p className="fp-header">{"> render /neal.html --ascii-only"}</p>
-      <p className="fp-body">
-        {"hi, i'm neal."}
-        <br/><br/>{"i am a software engineer who vicariously lives through the terminal."}
-        <br/>{"hobbies include: cooking, reading, finance, and painting."}
-        <br/><br/>{"this portfolio is meant to mimick my personal system's theme."} 
-        <br/>{"additionally, it was designed with minimalism in mind."}
-        <br/>{"eventually, i would like to publish a noscript compatible version."} 
-        <br/><br/><br/><br/>{"navigation:"}
-        <br/><br/>{"/doc/ contains a collection of medium articles i have written,"} 
-        {"often coinciding with projects that i've completed."}
-        <br/><br/>{"/src/ contains a collection of projects and their respective codebases."}
-        <br/><br/>{"/ext/* are various external links that might be relevant."} 
-      </p>
+      <Typist avgTypingDelay={25} cursor={{show: false}}>
+        <p className="fp-header">{"> render /neal.html --ascii-only --enable-typing"}</p>
+      </Typist>
+      <Typist avgTypingDelay={1} stdTypingDelay={10} cursor={{show: false}}>
+        <Typist.Delay ms={1500+500} />
+        <p className="fp-body">
+          {"hi, i'm neal."}
+          <br/><br/>{"i am a software engineer who vicariously lives through the terminal."}
+          <br/>{"hobbies include: cooking, reading, finance, and painting."}
+          <br/><br/>{"this portfolio is meant to mimick my personal system's theme."} 
+          <br/>{"additionally, it was designed with minimalism in mind."}
+          <br/>{"eventually, i would like to publish a noscript compatible version."} 
+          <br/><br/><br/><br/>{"navigation:"}
+          <br/><br/>{`/doc/ contains a collection of medium articles i have written, 
+          often coinciding with projects that i've completed.`}
+          <br/><br/>{"/src/ contains a collection of projects and their respective codebases."}
+          <br/><br/>{"/ext/* are various external links that might be relevant."} 
+        </p>
+      </Typist>
       <div className="gutter">
         <p className="fp-header">{"total 4K, read-only, no-error"}</p>
       </div>
@@ -168,7 +175,7 @@ function Doc() {
               I cheated on you.`,
       link: "https://nealdotpy.medium.com/i-cheated-on-windows-and-it-was-the-best-decision-of-my-life-b380a2f9d9c9",
       linkLabel: "Read More >",
-      wait: 100
+      wait: 100+1500
     },
     {
       title: "If I Can’t Make Money, My Python Trading Bot Will...",
@@ -176,7 +183,7 @@ function Doc() {
       learn how to make money to get paid to go to the classes I didn’t like.`,
       link: "https://nealdotpy.medium.com/if-i-cant-make-money-my-python-trading-bot-will-368a592b3c6d",
       linkLabel: "Read More >",
-      wait: 225
+      wait: 225+1500
     },
     {
       title: "I Couldn’t Decided What Camera To Buy So I Made One With A Brain",
@@ -186,13 +193,15 @@ function Doc() {
       longer than I’d like to admit.`,
       link: "https://nealdotpy.medium.com/i-couldnt-decided-what-camera-to-buy-so-i-made-one-with-a-brain-c3e7a83faa0e",
       linkLabel: "Read More >",
-      wait: 300
+      wait: 300+1500
     }
   ];
 
   return( 
     <div>
-      <p className="fp-header">{"> ls /doc/ | render --use-card Doc"}</p>
+      <Typist avgTypingDelay={25} cursor={{show: false}}>
+        <p className="fp-header">{"> ls /doc/ | render --use-card Doc"}</p>
+      </Typist>
       <div className="media">
         {cards.map( (card) => (
           <MediaCard wait={card.wait}
@@ -223,7 +232,7 @@ function Src() {
       information, and obtaining real-time quotes for various instruments, and more!`,
       link: "https://github.com/nealdotpy/cli-stonks",
       linkLabel: "View on Github >",
-      wait: 100
+      wait: 100+1500
     },
     {
       title: "ml-cam",
@@ -231,7 +240,7 @@ function Src() {
       Google Cloud Platform's Compute Engine.`,
       link: "https://github.com/nealdotpy/ml-cam",
       linkLabel: "View on Github >",
-      wait: 170
+      wait: 170+1500
     },
     {
       title: "public-trading-bot",
@@ -239,7 +248,7 @@ function Src() {
       conduct live and paper trades.`,
       link: "https://github.com/nealdotpy/public-trading-bot",
       linkLabel: "View on Github >",
-      wait: 300
+      wait: 300+1500
     },
     {
       title: "the-invisible-impact",
@@ -247,13 +256,15 @@ function Src() {
       Culture Intervention.`,
       link: "https://github.com/nealdotpy/the-invisible-impact",
       linkLabel: "View on Github >",
-      wait: 325
+      wait: 325+1500
     }
   ];
 
   return( 
     <div>
-      <p className="fp-header">{"> ls /doc/ | render --use-card Src"}</p>
+      <Typist avgTypingDelay={25} cursor={{show: false}}>
+        <p className="fp-header">{"> ls /doc/ | render --use-card Src"}</p>
+      </Typist>
       <div className="media">
         {cards.map( (card) => (
           <MediaCard wait={card.wait} 
