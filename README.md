@@ -1,1 +1,3 @@
-my minimalist personal website.
+### my minimalist personal website.
+
+![preview](src/media/screenshot.png)
