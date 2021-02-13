@@ -29,7 +29,7 @@ function App() {
         <NavItem link="#" index={0} isActive={activeIndex === 0} onClick={navClick} name="/neal.html" />
         <NavItem link="#" index={1} isActive={activeIndex === 1} onClick={navClick} name="/doc/" />
         <NavItem link="#" index={2} isActive={activeIndex === 2} onClick={navClick} name="/src/" />
-        <NavItem link={Resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.pdf" />
+        <NavItem link={Resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.sh" />
         <NavItem link={linkedin} index={4} isActive={activeIndex === 4} onClick={navClick} name="/ext/linkedin.sh" /> 
         <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.sh" />     
       </nav>
@@ -49,7 +49,31 @@ function App() {
           <Src/>
           :
           null
-        }      
+        }
+        {page == 3 ?
+          <div>
+            <p className="fp-header">{"> ./ext/resume.sh"}</p>
+            <p className="fp-body">{"200 OK https://thatnealpatel.com/static/media/resume.pdf"}</p>
+          </div>
+          :
+          null
+        }
+        {page == 4 ?
+          <div>
+            <p className="fp-header">{"> ./ext/linkedin.sh"}</p>
+            <p className="fp-body">{"200 OK https://linkedin.com/in/thatnealpatel"}</p>
+          </div>
+          :
+          null
+        }
+        {page == 5 ?
+          <div>
+            <p className="fp-header">{"> ./ext/github.sh"}</p>
+            <p className="fp-body">{"200 OK https://github.com/nealdotpy"}</p>
+          </div>
+          :
+          null
+        }
       </div>
     </div>
   );
@@ -81,7 +105,8 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
   render() {
     return <li className="nav-item">
       { this.props.index >= 3 ?
-        <a 
+        <a
+          target="_blank"
           href={this.props.link}
           className={this.props.isActive ? 'nav-item__selected' : ''} 
           onClick={this.handleClick}>{this.props.name}
