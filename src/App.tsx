@@ -263,7 +263,7 @@ function Src() {
   return( 
     <div className="faux-terminal">
       <Typist avgTypingDelay={25} cursor={{show: false}}>
-        <p className="fp-header">{"> ls /doc/ | render --use-card Src"}</p>
+        <p className="fp-header">{"> ls /src/ | render --use-card Src"}</p>
       </Typist>
       <div className="media">
         {cards.map( (card) => (
