@@ -127,3 +127,7 @@ nav {
     max-height: 65vh;
   }
 }
+
+.status-green {
+  color: #198844;
+}

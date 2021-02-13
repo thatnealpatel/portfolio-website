@@ -54,7 +54,11 @@ function App() {
         {page == 3 ?
           <div>
             <p className="fp-header">{"> ./ext/resume.sh"}</p>
-            <p className="fp-body">{"200 OK https://thatnealpatel.com/static/media/resume.pdf"}</p>
+            <p className="fp-body">
+              {"HTTP 200 "}
+              <span className="status-green">OK</span>
+              {" https://thatnealpatel.com/static/media/resume.pdf"}
+            </p>
           </div>
           :
           null
@@ -62,7 +66,11 @@ function App() {
         {page == 4 ?
           <div>
             <p className="fp-header">{"> ./ext/linkedin.sh"}</p>
-            <p className="fp-body">{"200 OK https://linkedin.com/in/thatnealpatel"}</p>
+            <p className="fp-body">
+              {"HTTP 200 "}
+              <span className="status-green">OK</span>
+              {" https://linkedin.com/in/thatnealpatel"}
+            </p>
           </div>
           :
           null
@@ -70,7 +78,11 @@ function App() {
         {page == 5 ?
           <div>
             <p className="fp-header">{"> ./ext/github.sh"}</p>
-            <p className="fp-body">{"200 OK https://github.com/nealdotpy"}</p>
+            <p className="fp-body">
+              {"HTTP 200 "}
+              <span className="status-green">OK</span>
+              {" https://github.com/nealdotpy"}
+            </p>
           </div>
           :
           null
