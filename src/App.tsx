@@ -56,50 +56,34 @@ function App() {
           null
         }
         {page == 3 ?
-          <div>
-            <p className="fp-header">{"> ./ext/resume.sh"}</p>
-            <p className="fp-body">
-              {"HTTP 200 "}
-              <span className="status-green">OK</span>
-              {" https://thatnealpatel.com/static/media/resume.pdf"}
-            </p>
-          </div>
+          <FauxStdOut 
+            command="./ext/resume.sh"
+            link="https://thatnealpatel.com/static/media/resume.pdf"
+          />
           :
           null
         }
         {page == 4 ?
-          <div>
-            <p className="fp-header">{"> ./ext/linkedin.sh"}</p>
-            <p className="fp-body">
-              {"HTTP 200 "}
-              <span className="status-green">OK</span>
-              {` ${linkedin}`}
-            </p>
-          </div>
+          <FauxStdOut 
+            command="./ext/linkedin.sh"
+            link={linkedin}
+          />
           :
           null
         }
         {page == 5 ?
-          <div>
-            <p className="fp-header">{"> ./ext/github.sh"}</p>
-            <p className="fp-body">
-              {"HTTP 200 "}
-              <span className="status-green">OK</span>
-              {` ${github}`}
-            </p>
-          </div>
+          <FauxStdOut 
+            command="./ext/github.sh"
+            link={github}
+          />
           :
           null
         }
         {page == 6 ?
-          <div>
-            <p className="fp-header">{"> ./ext/fork_me.sh"}</p>
-            <p className="fp-body">
-              {"HTTP 200 "}
-              <span className="status-green">OK</span>
-              {` ${fork_me}`}
-            </p>
-          </div>
+          <FauxStdOut 
+            command="./ext/fork_me.sh"
+            link={fork_me}
+          />
           :
           null
         }
@@ -148,6 +132,38 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
       }
     </li>
   }
+}
+
+
+/**
+FauxStdOut
+  Abstraction for the fake stdout that is printed when a user clicks an external nav link.
+*/
+interface FauxStdOutProps {
+  command: string;
+  link: string;
+}
+
+interface FauxStdOutState {
+}
+
+class FauxStdOut extends React.Component<FauxStdOutProps, FauxStdOutState> {
+  
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+    return <div>
+      <p className="fp-header">{`> ${this.props.command}`}</p>
+      <p className="fp-body">
+        {"HTTP 200 "}
+        <span className="status-green">OK</span>
+        {` ${this.props.link}`}
+      </p>
+    </div>
+  }
+
 }
 
 
