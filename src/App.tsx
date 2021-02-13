@@ -164,7 +164,7 @@ function Doc() {
       body: `The Windows Operating System and I had been together for around four years. 
               I admit: I had been in an open relationship with both Windows and macOS for some time; 
               however, Windows and I finally went exclusive. The straw that broke the camel’s back 
-              was the constant nagging. I’m sorry Windows, it’s not you; it’s me…no seriously, 
+              was the constant nagging. I’m sorry Windows, it’s not you; it’s me...no seriously, 
               I cheated on you.`,
       link: "https://nealdotpy.medium.com/i-cheated-on-windows-and-it-was-the-best-decision-of-my-life-b380a2f9d9c9",
       linkLabel: "Read More >",
