@@ -18,6 +18,10 @@
   justify-content: center;
   font-size: calc(7px + 1vmin);
   font-family: 'Source Code Pro', monospace !important;
+  /* Simplest Way To Keep Elements In Check*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 nav {
@@ -46,4 +50,68 @@ nav {
 
 .nav-item a:active {
   color: green;
+}
+
+.faux-paper {
+  position: relative;
+  border: 1px;
+  border-style: solid;
+  border-color: #ffbc00; 
+  height: 90vh;
+  width: 75vw;
+  margin: 1em 1em 1em 1em;
+  padding: 2em 2em 2em 2em;
+}
+
+.fp-header {
+  color: #ffbc00;
+  font-weight: 900;
+  padding-bottom: 5em;
+}
+
+.fp-body {
+  color: #c5c8c6;
+  font-weight: 400;
+}
+
+.gutter {
+  position: absolute;
+  bottom: 0;
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media-card {
+  width: 90%;
+  height: 20%;
+  border: 1px;
+  border-style: outset;
+  border-color: #c5c8c6; 
+  padding: 1em;
+  margin: 0 0 1em 0;
+}
+
+.card-title {
+  color: #ffbc00;
+  font-weight: 400;
+}
+
+.card-body {
+  color: #fff;
+  font-weight: 200;
+  font-size: calc(5px + 1vmin);
+}
+
+.card-link {
+  color: #ffbc00;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.hidden {
+  display: none;
 }
