@@ -3,12 +3,14 @@ import Typist from 'react-typist';
 import { useState } from 'react';
 import './App.css';
 
-
 import Resume from 'src/media/resume.pdf'; 
 
 /**
 App
   Single Page Application.
+  I am aware that you typically re-factor things into a src/components folder; however,
+  I really like the way this looks inside of one source file. In addition, this project
+  is all about minimialism... why not live on the edge a little? 
 */
 function App() {
 
@@ -23,6 +25,7 @@ function App() {
 
   const linkedin = "https://linkedin.com/in/thatnealpatel";
   const github = "https://github.com/nealdotpy";
+  const fork_me = "https://github.com/nealdotpy/portfolio-website";
 
   return (
     <div className="App">
@@ -32,7 +35,8 @@ function App() {
         <NavItem link="#" index={2} isActive={activeIndex === 2} onClick={navClick} name="/src/" />
         <NavItem link={Resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.sh" />
         <NavItem link={linkedin} index={4} isActive={activeIndex === 4} onClick={navClick} name="/ext/linkedin.sh" /> 
-        <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.sh" />     
+        <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.sh" />
+        <NavItem link={fork_me} index={6} isActive={activeIndex === 6} onClick={navClick} name="/ext/fork_me.sh" />       
       </nav>
 
       <div className="faux-paper">
@@ -69,7 +73,7 @@ function App() {
             <p className="fp-body">
               {"HTTP 200 "}
               <span className="status-green">OK</span>
-              {" https://linkedin.com/in/thatnealpatel"}
+              {` ${linkedin}`}
             </p>
           </div>
           :
@@ -81,7 +85,19 @@ function App() {
             <p className="fp-body">
               {"HTTP 200 "}
               <span className="status-green">OK</span>
-              {" https://github.com/nealdotpy"}
+              {` ${github}`}
+            </p>
+          </div>
+          :
+          null
+        }
+        {page == 6 ?
+          <div>
+            <p className="fp-header">{"> ./ext/fork_me.sh"}</p>
+            <p className="fp-body">
+              {"HTTP 200 "}
+              <span className="status-green">OK</span>
+              {` ${fork_me}`}
             </p>
           </div>
           :
@@ -138,6 +154,8 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
 /**
 Splash
   Refactored FauxPage component.
+  This component fits into the FauxPaper div and has basic information about
+  myself and navigation.
 */
 class Splash extends React.Component {
 
@@ -174,6 +192,10 @@ class Splash extends React.Component {
 /**
 Doc
   Refactored FauxPage component.
+  This component fits into the FauxPaper div and maps each of the desired cards containing
+  medium article previews.
+  Eventually, it would be nice to use an API for this; however, for the time being
+  it will remain hardcoded.
 */
 function Doc() {
 
@@ -234,6 +256,10 @@ function Doc() {
 /**
 Src
   Refactored FauxPage component.
+  This component fits into the FauxPaper div and maps each of the desired cards containing
+  codebase information. 
+  Eventually, it would be nice to use an API for this; however, for the time being
+  it will remain hardcoded.
 */
 function Src() {
 
