@@ -19,7 +19,7 @@ function App() {
 
   const navClick = (index: number) => {
     setActiveIndex(index);
-    setPage(index)
+    setPage(index);
     // console.log("clicked:", activeIndex);
   };
 
