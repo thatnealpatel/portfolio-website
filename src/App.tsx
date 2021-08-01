@@ -24,8 +24,8 @@ function App() {
   };
 
   const linkedin = "https://linkedin.com/in/thatnealpatel";
-  const github = "https://github.com/nealdotpy";
-  const fork_me = "https://github.com/nealdotpy/portfolio-website";
+  const github = "https://github.com/thatnealpatel";
+  const fork_me = "https://github.com/thatnealpatel/portfolio-website";
 
   return (
     <div className="App">
@@ -33,7 +33,6 @@ function App() {
         <NavItem link="#" index={0} isActive={activeIndex === 0} onClick={navClick} name="/neal.html" />
         <NavItem link="#" index={1} isActive={activeIndex === 1} onClick={navClick} name="/doc/" />
         <NavItem link="#" index={2} isActive={activeIndex === 2} onClick={navClick} name="/src/" />
-        <NavItem link={Resume} index={3} isActive={activeIndex === 3} onClick={navClick} name="/ext/resume.sh" />
         <NavItem link={linkedin} index={4} isActive={activeIndex === 4} onClick={navClick} name="/ext/linkedin.sh" /> 
         <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.sh" />
         <NavItem link={fork_me} index={6} isActive={activeIndex === 6} onClick={navClick} name="/ext/fork_me.sh" />       
@@ -52,14 +51,6 @@ function App() {
         }
         {page == 2 ?
           <Src/>
-          :
-          null
-        }
-        {page == 3 ?
-          <FauxStdOut 
-            command="./ext/resume.sh"
-            link="https://thatnealpatel.com/static/media/resume.pdf"
-          />
           :
           null
         }
@@ -303,15 +294,7 @@ function Src() {
       link: "https://github.com/nealdotpy/public-trading-bot",
       linkLabel: "View on Github >",
       wait: 300+1500
-    },
-    {
-      title: "the-invisible-impact",
-      body: `A repository hosting the source code for our Environmental Justice Visual 
-      Culture Intervention.`,
-      link: "https://github.com/nealdotpy/the-invisible-impact",
-      linkLabel: "View on Github >",
-      wait: 325+1500
-    }
+    } 
   ];
 
   return( 
