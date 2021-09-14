@@ -15,7 +15,6 @@ function App() {
 
   const navClick = (index: number) => {
     setPage(index);
-    // console.log("clicked:", activeIndex);
   };
 
   const linkedin = "https://linkedin.com/in/thatnealpatel";
@@ -34,22 +33,22 @@ function App() {
       </nav>
 
       <div className="faux-paper">
-        {page == 0 ?
+        {page === 0 ?
           <Splash/>
           :
           null
         }
-        {page == 1 ?
+        {page === 1 ?
           <Doc/>
           :
           null
         }
-        {page == 2 ?
+        {page === 2 ?
           <Src/>
           :
           null
         }
-        {page == 4 ?
+        {page === 4 ?
           <FauxStdOut 
             command="./ext/linkedin.sh"
             link={linkedin}
@@ -57,7 +56,7 @@ function App() {
           :
           null
         }
-        {page == 5 ?
+        {page === 5 ?
           <FauxStdOut 
             command="./ext/github.sh"
             link={github}
@@ -65,7 +64,7 @@ function App() {
           :
           null
         }
-        {page == 6 ?
+        {page === 6 ?
           <FauxStdOut 
             command="./ext/fork_me.sh"
             link={fork_me}
