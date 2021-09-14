@@ -3,8 +3,6 @@ import Typist from 'react-typist';
 import { useState } from 'react';
 import './App.css';
 
-import Resume from 'src/media/resume.pdf'; 
-
 /**
 App
   Single Page Application.
@@ -13,12 +11,9 @@ App
   is all about minimialism... why not live on the edge a little? 
 */
 function App() {
-
-  const [activeIndex, setActiveIndex] = useState(0);
   const [page, setPage] = useState(0);
 
   const navClick = (index: number) => {
-    setActiveIndex(index);
     setPage(index);
     // console.log("clicked:", activeIndex);
   };
@@ -30,12 +25,12 @@ function App() {
   return (
     <div className="App">
       <nav className="min-nav no-select">
-        <NavItem link="#" index={0} isActive={activeIndex === 0} onClick={navClick} name="/neal.html" />
-        <NavItem link="#" index={1} isActive={activeIndex === 1} onClick={navClick} name="/doc/" />
-        <NavItem link="#" index={2} isActive={activeIndex === 2} onClick={navClick} name="/src/" />
-        <NavItem link={linkedin} index={4} isActive={activeIndex === 4} onClick={navClick} name="/ext/linkedin.sh" /> 
-        <NavItem link={github} index={5} isActive={activeIndex === 5} onClick={navClick} name="/ext/github.sh" />
-        <NavItem link={fork_me} index={6} isActive={activeIndex === 6} onClick={navClick} name="/ext/fork_me.sh" />       
+        <NavItem link="#" index={0} isActive={page === 0} onClick={navClick} name="/neal.html" />
+        <NavItem link="#" index={1} isActive={page === 1} onClick={navClick} name="/doc/" />
+        <NavItem link="#" index={2} isActive={page === 2} onClick={navClick} name="/src/" />
+        <NavItem link={linkedin} index={4} isActive={page === 4} onClick={navClick} name="/ext/linkedin.sh" /> 
+        <NavItem link={github} index={5} isActive={page === 5} onClick={navClick} name="/ext/github.sh" />
+        <NavItem link={fork_me} index={6} isActive={page === 6} onClick={navClick} name="/ext/fork_me.sh" />       
       </nav>
 
       <div className="faux-paper">
@@ -88,9 +83,6 @@ function App() {
 NavItem
   Abstraction for nav elements.
   Takes NavItemProps in order to faciliate dynamic class assignment.
-  Additionally, there exists one hard-coded component: 
-    this.props.index >= 3 :: indicates that NavItem's with index gte 3 
-    are externally linked elements, while all else renders on page.
 */
 interface NavItemProps {
   link: string;
@@ -108,7 +100,7 @@ class NavItem extends React.Component<NavItemProps, NavItemState> {
 
   render() {
     return <li className="nav-item">
-      { this.props.index >= 3 ?
+      { this.props.link != "#" ?
         <a
           target="_blank"
           href={this.props.link}
