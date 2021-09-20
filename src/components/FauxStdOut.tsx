@@ -1,3 +1,4 @@
+import React from 'react';
 /**
 FauxStdOut
   Abstraction for the fake stdout that is printed when a user clicks an external nav link.
@@ -28,4 +29,4 @@ interface FauxStdOutProps {
     }
   
   }
-  
+export default FauxStdOut;

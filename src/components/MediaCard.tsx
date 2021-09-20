@@ -1,3 +1,4 @@
+import React from 'react';
 /**
 MediaCard
   Minimal card for displaying information.
@@ -42,3 +43,5 @@ interface MediaCardProps {
       </div>
     }
   }
+
+  export default MediaCard;

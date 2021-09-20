@@ -1,4 +1,5 @@
 import Typist from 'react-typist';
+import MediaCard from './MediaCard';
 /**
 Doc
   Refactored FauxPage component.
@@ -61,3 +62,4 @@ function Doc() {
       </div>
     );
   }
+  export default Doc;

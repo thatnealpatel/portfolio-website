@@ -1,3 +1,4 @@
+import React from 'react';
 /**
 NavItem
   Abstraction for nav elements.
@@ -35,3 +36,4 @@ interface NavItemProps {
       </li>
     }
   }
+export default NavItem;
